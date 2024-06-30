@@ -1,5 +1,10 @@
 @echo off
 call BuildProject.bat
-timeout /t 5
-xcopy /h /y /c /r /s Build\ _Test\ > nul
-rem start "" _Test\Resources\clientxna.exe
+timeout /t 5 > nul
+echo.
+
+echo Копирование файлов в папку _Test...
+xcopy /h /y /c /r /s Build\ _Test\
+echo Запуск клиента
+timeout /t 5 > nul
+start "" _Test\Resources\clientxna.exe
